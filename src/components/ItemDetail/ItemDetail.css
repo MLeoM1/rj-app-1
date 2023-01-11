@@ -1,0 +1,13 @@
+.container-detalle {
+    margin: 25px;
+    background-color: #a2e3c4;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    border: #198754 4px solid;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}

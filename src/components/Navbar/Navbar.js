@@ -1,5 +1,6 @@
 import './Navbar.css'
 import logo from '../assets/img/logo.jpg'
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
 
@@ -7,13 +8,13 @@ export const Navbar = () => {
         <header className="header">
             <div className='header-container'>
                 <h1 className="header-logo">
-                    <img className='logo' src={logo}/>
+                    <Link to="/"><img className='logo' src={logo}/></Link>
                 </h1>
                 <nav className="header-nav">
-                    <a className="header-link" href="#">link 1</a>
-                    <a className="header-link" href="#">Link 2</a>
-                    <a className="header-link" href="#">Link 3</a>
-                    <a className="header-link" href="#">Link 4</a>
+                    <Link className="header-link" to="/productos/celularesytelefonos">Celulares y telefonos</Link>
+                    <Link className="header-link" to="/productos/computacion">Computacion</Link>
+                    <Link className="header-link" to="/productos/consolayvideojuegos">Consola y videojuegos</Link>
+                    <Link className="header-link" to="/productos/electronica">Electronica</Link>
                 </nav>
                 <div className='carrito'>
                     <button className='boton-carrito'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
