@@ -1,19 +1,19 @@
-import './ItemListContainer.css'
+import './ItemListMarca.css'
 import { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 
-const ItemListContainer = () => {
+const ItemListMarca = () => {
 
     const [productos, setProductos] = useState([])
-    const { categoryId } = useParams()
+    const { marcaId } = useParams()
 
     useEffect(() => {
         pedirDatos()
             .then((res) => {
-                if (categoryId) {
-                    setProductos( res.filter(prod => prod.category === categoryId) )
+                if (marcaId) {
+                    setProductos( res.filter(prod => prod.marca === marcaId) )
                 } else {
                     setProductos(res)
                 }
@@ -21,7 +21,7 @@ const ItemListContainer = () => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [categoryId])
+    }, [marcaId])
 
 
     return (
@@ -31,4 +31,4 @@ const ItemListContainer = () => {
     )
 }
 
-export default ItemListContainer
+export default ItemListMarca

@@ -1,13 +1,28 @@
 .container-detalle {
     margin: 25px;
-    background-color: #a2e3c4;
+    background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     padding: 10px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 25px;
     border: #198754 4px solid;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.imagen-detalle{
+    width: 400px;
+}
+
+.container-precio{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nombre-producto{
+    display: flex;
+    margin: 10px 0 25px 0;
 }

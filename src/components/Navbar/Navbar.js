@@ -11,10 +11,9 @@ export const Navbar = () => {
                     <Link to="/"><img className='logo' src={logo}/></Link>
                 </h1>
                 <nav className="header-nav">
-                    <Link className="header-link" to="/productos/celularesytelefonos">Celulares y telefonos</Link>
-                    <Link className="header-link" to="/productos/computacion">Computacion</Link>
-                    <Link className="header-link" to="/productos/consolayvideojuegos">Consola y videojuegos</Link>
-                    <Link className="header-link" to="/productos/electronica">Electronica</Link>
+                    <Link className="header-link" to="/productos/consola">Consola</Link>
+                    <Link className="header-link" to="/productos/joystick">Joystick</Link>
+                    <Link className="header-link" to="/productos/suscripcion">Suscripciones</Link>
                 </nav>
                 <div className='carrito'>
                     <button className='boton-carrito'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">

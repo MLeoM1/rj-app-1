@@ -1,0 +1,21 @@
+.container-marca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.marca-detalle{
+    display: flex;
+    
+}
+
+.marca-logo{
+    width: 80px;
+    border-radius: 10px;
+}
+.marca-detalle:hover {
+    transform: scale(1.1);
+}

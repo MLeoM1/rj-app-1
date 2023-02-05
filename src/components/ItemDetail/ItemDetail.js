@@ -1,7 +1,7 @@
 import './ItemDetail.css'
 import { useNavigate } from "react-router-dom"
 
-const ItemDetail = ( {id, name, stock, category, image, description, price} ) => {
+const ItemDetail = ( {id, name, stock, category, image, description, price, marca,} ) => {
 
     const navigate = useNavigate()
 
@@ -11,16 +11,18 @@ const ItemDetail = ( {id, name, stock, category, image, description, price} ) =>
 
     return (
         <div className="container-detalle">
-            <h2>{name}</h2>
-            <img src={image}/>
+            <h2 className='nombre-producto'>{name}</h2>
+            <div className='container-precio'>
+                <img className="imagen-detalle" src={image}/>
+                <p>Precio: ${price}</p>
+            </div>
             <br/>
             <small>Categoría: {category}</small>
+            <br/>
             <p>{description}</p>
-            <p>Precio: ${price}</p>
-
+            <p>Marca: {marca}</p>
             <hr/>
-
-            <button className="btn btn-primary" onClick={handleVolver}>Volver</button>
+            <button className="btn btn-success" onClick={handleVolver}>Volver</button>
         </div>
     )
 }

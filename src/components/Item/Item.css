@@ -3,16 +3,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #198754 2px solid;
+    border: #000000 2px solid;
     border-radius: 10px;
-    background-color: rgb(213, 228, 213);
+    background-color: rgb(255, 255, 255);
     color: black;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .boton-ver {
     margin: 10px;
 }
+.boton-ver:hover {
+    transform: scale(1.2);
+}
+
+
 
 .imagen-productos {
     margin: 15px 0 10px 0 ;
+    height: auto;
+    max-width: 250px;
+    max-height: 200px;
+}
+
+.imagen-productos:hover {
+    transform: scale(1.1);
 }
