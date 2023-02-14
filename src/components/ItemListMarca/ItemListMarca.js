@@ -1,32 +1,28 @@
 import './ItemListMarca.css'
-import { useEffect, useState } from "react"
-import { pedirDatos } from "../../helpers/pedirDatos"
-import ItemList from "../ItemList/ItemList"
+import ItemMarca from "../ItemList/ItemList"
+import useCollection from "../../hooks/useCollection"
 import { useParams } from "react-router-dom"
+import { where } from "firebase/firestore"
 
 const ItemListMarca = () => {
 
-    const [productos, setProductos] = useState([])
     const { marcaId } = useParams()
-
-    useEffect(() => {
-        pedirDatos()
-            .then((res) => {
-                if (marcaId) {
-                    setProductos( res.filter(prod => prod.marca === marcaId) )
-                } else {
-                    setProductos(res)
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }, [marcaId])
-
+    const { data, loading } = useCollection(
+            "productos",
+            [marcaId],
+            marcaId && 
+            [
+                where("marca", "==", marcaId)
+            ]
+        )
 
     return (
         <div>
-            <ItemList productos={productos}/>
+            {
+                loading
+                    ? <h2>Cargando...</h2>
+                    : <ItemMarca productos={data}/>
+            }
         </div>
     )
 }
