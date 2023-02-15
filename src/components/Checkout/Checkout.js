@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { db } from "../../firebase/config"
+import './Checkout.css'
 import { collection, writeBatch, documentId, getDocs, query, where, addDoc } from "firebase/firestore"
 import { Formik } from "formik"
 import * as Yup from 'yup'
@@ -66,12 +67,11 @@ const Checkout = () => {
 
     if (orderId) {
         return (
-            <div className="container my-5">
+            <div className="check-detalle-1">
                 <h2>Tu compra ha sido exitosa</h2>
                 <hr/>
                 <p>Tu código de orden es: {orderId}</p>
-
-                <Link to="/">Volver</Link>
+                <Link to="/"><buton className="btn btn-success">Volver</buton></Link>
             </div>
         )
     }
@@ -81,8 +81,8 @@ const Checkout = () => {
     }
 
     return (
-        <div className="container my-5">
-            <h2>Terminar mi compra</h2>
+        <div className="check-detalle">
+            <h2>Terminar compra:</h2>
             <hr/>
 
             <Formik
@@ -102,36 +102,36 @@ const Checkout = () => {
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <input
-                            className="form-control my-2"
+                            className="form-control distancia"
                             onChange={handleChange}
                             type="text"
                             name="nombre"
                             value={values.nombre}
-                            placeholder="Tu nombre"
+                            placeholder="Nombre completo"
                         />
                         {errors.nombre && <p>{errors.nombre}</p>}
 
                         <input
-                            className="form-control my-2"
+                            className="form-control distancia"
                             onChange={handleChange}
                             type="text"
                             name="direccion"
                             value={values.direccion}
-                            placeholder="Tu dirección"
+                            placeholder="Dirección"
                         />
                         {errors.direccion && <p>{errors.direccion}</p>}
 
                         <input
-                            className="form-control my-2"
+                            className="form-control distancia"
                             onChange={handleChange}
                             type="email"
                             name="email"
                             value={values.email}
-                            placeholder="Tu email"
+                            placeholder="Email"
                         />
                         {errors.email && <p>{errors.email}</p>}
 
-                        <button className="btn btn-primary" type="submit">Enviar</button>
+                        <button className="btn btn-success" type="submit">Enviar</button>
                     </form>
                 )}
             </Formik>
